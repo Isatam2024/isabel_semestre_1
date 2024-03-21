@@ -4,8 +4,9 @@ def imprimir(variable):
     print(variable)
 def sumar(a, b):
     return a + b
-def calcular_edad(fecha_nac):
-    return date.today() - fecha_nac
+def edad(añoactual, añonacimiento) :
+    edad=int(añoactual-añonacimiento)
+    return edad
 def IMC(Masa, Estatura):
     return Masa/(Estatura**2)
 def Hallarparesoimpares(n):
@@ -14,7 +15,7 @@ def Hallarparesoimpares(n):
     else:
         print(n, "es impar.")
 
-def Areacuadrado(l):
+def Areacuadrado(l1):
     return l1**2
 def Areatriangulo(b, h):
     return b * h / 2
@@ -57,7 +58,7 @@ def main():
 
     opcion = input("Ingrese el número correspondiente a la operación deseada: ")
     if opcion == '1':
-        variable = input("Ingrese una variable")
+        variable = "Hola Mundo"
         imprimir(variable)
     elif opcion == "2":
         a = int(input("Ingrese el primer número: "))
@@ -65,14 +66,14 @@ def main():
         resultado = sumar(a, b)
         print(f"Resultado: {resultado}")
     elif opcion == "3":
-        fecha_nac = int(input("Ingrese la fecha de nacimiento: "))
-        edad = calcular_edad(fecha_nac)
-        print(f"La edad es: {edad}")
+        añoactual = int(input("Ingrese el año actual: "))
+        añonacimiento = int(input("Ingrese el año de nacimiento: "))
+        edad = int(añoactual-añonacimiento)
+        print(f"Tienes {edad} años")
     elif opcion == "4":
         Masa = float(input("Ingrese la masa corporal: "))
         Estatura = float(input("Ingrese la estatura: "))
-        IMC = IMC(Masa,Estatura)
-        print(f"El IMC es: {IMC(Masa,Estatura)}")
+        print(f"El IMC es: {IMC(Masa, Estatura)}")
     elif opcion == "5":
         n = int(input("Ingrese un número entero: "))
         if n % 2 == 0:
@@ -80,11 +81,11 @@ def main():
         else:
             print(n, "es impar.")
     elif opcion == "6":
-        l = int(input("Ingrese un número entero: "))
-        print(f"Resultado: {l}")
+        l1 = int(input("Ingrese el valor del lado del cuadrado: "))
+        print(f"El area del cuadrado es: {Areacuadrado(l1)}")
     elif opcion == "7":
-        b = int(input("Ingrese un número entero: "))
-        h = int(input("Ingrese un número entero: "))
+        b = int(input("Ingrese el valor de la base: "))
+        h = int(input("Ingrese el valor de la altura: "))
         resultado = Areatriangulo(b, h)
         print(f"Resultado: {resultado}")
     elif opcion == "8":
@@ -95,8 +96,8 @@ def main():
         salario_pasado = int(input("Ingrese el salario pasado: "))
         Aumentosalario(salario_actual, salario_pasado)
     elif opcion == "10":
-        HJL = int(input("Ingrese la hora jornada laboral: "))
-        HL = int(input("Ingrese la hora laborada: "))
+        HJL = int(input("Ingrese las horas de jornada laboral: "))
+        HL = int(input("Ingrese las hora laboradas: "))
         Pagodehorasextras(HJL,HL)
     elif opcion == "11":
         print("Saliendo")
